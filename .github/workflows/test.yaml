@@ -5,6 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Hello
+    env:
+      KEY1: ${{ secrets.KEY1 }}
+      KEY2: ${{ secrets.KEY2 }}
+      REFERENCE: ${{ github.ref }}
+      COMMIT_HASH1: ${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -15,5 +20,11 @@ jobs:
         run: echo $KEY1
       - name: echo eviroments KEY2
         run: echo $KEY2
-      - name: echo event head commit message
-        run: echo ${{ github.event.head_commit.message }}
+      - name: echo event head commit message1
+        run: echo $COMMIT_HASH1
+      - name: echo event head commit message2
+        run: echo ${GITHUB_SHA::7}
+      - name: echo github reference1
+        run: echo $REFERENCE
+      - name: echo github reference2
+        run: echo $GITHUB_REF
