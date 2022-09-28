@@ -11,3 +11,9 @@ jobs:
       - name: run hello action
         id: hello-action
         run: node index.js
+      - name: echo eviroments KEY1
+        run: echo $KEY1
+      - name: echo eviroments KEY2
+        run: echo $KEY2
+      - name: echo event head commit message
+        run: echo ${{ github.event.head_commit.message }}
