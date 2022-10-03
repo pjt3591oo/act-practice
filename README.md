@@ -1,6 +1,8 @@
 * dry run
 
 ```bash
+$ act -n
+
 *DRYRUN* [For Hellow World/Hello] 🚀  Start image=catthehacker/ubuntu:act-latest
 *DRYRUN* [For Hellow World/Hello]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=false
 *DRYRUN* [For Hellow World/Hello]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["/usr/bin/tail" "-f" "/dev/null"] cmd=[]
